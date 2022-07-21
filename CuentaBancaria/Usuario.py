@@ -1,6 +1,5 @@
 from CuentaBancaria import CuentaBancaria
 class Usuario:
-    cuentasB = []
 
     def __init__(self, name):
         self.name = name
