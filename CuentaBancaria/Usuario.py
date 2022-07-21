@@ -1,39 +1,29 @@
 from CuentaBancaria import CuentaBancaria
 class Usuario:
-
+    cuentasB = []
 
     def __init__(self, name):
         self.name = name
         self.cuenta = CuentaBancaria(balance=0, tasa_interes=0.02)
-        self.cuentaAhorros=CuentaBancaria(balance=0,tasa_interes=0.02)
-        self.cuentaCorriente=CuentaBancaria(balance=0,tasa_interes=0.01)
-        
-        
-    def make_deposit(self, amount):
+
+    def hacer_deposito(self, amount):
         self.cuenta.deposito(amount)
         return self
         
         
-    def make_withdraw(self, amount):
+    def hacer_retiro(self, amount): 
         self.cuenta.retiro(amount)
         return self
         
-    def show_balance(self):
-        self.cuenta.printInformacion()
+    def mostrar_balance(self):
+        print(f"Usuario: {self.name}, Balance: $ {self.cuenta.balance}")
+        return self
+    
+    def generar_interes(self):
+        self.cuenta.generar_interes()
         return self
 
-        
-    def transfer_money(self, other_user, amount):
-        self.make_withdraw(amount)
-        other_user.make_deposit(amount)
-        self.show_balance()
-        other_user.show_balance()   
     
-
-
-    def método_ejemplo(self):
-        self.cuenta.depósito(100)		
-        print(self.cuenta.balance)
 
 
 
