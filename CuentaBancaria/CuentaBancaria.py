@@ -16,10 +16,6 @@ class CuentaBancaria:
     def retiro(self, amount):
         if self.balance >= amount:
             self.balance -= amount
-
-    def retiro(self, amount):
-        if self.balance >= amount:
-            self.balance -= amount
             print(f"Retiraste: {amount}")
             print(f"Tu nuevo balance es: {self.balance}")
         else:
@@ -40,7 +36,7 @@ class CuentaBancaria:
             print("Sin saldo")
         return self
 
-    def printInformation(self):
+    def printInformacion(self):
         print(f"Intereses: {self.tasa_interes} y  Balance: {self.balance}")
         return self
 

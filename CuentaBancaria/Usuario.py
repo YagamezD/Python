@@ -19,7 +19,7 @@ class Usuario:
         return self
         
     def show_balance(self):
-        self.cuenta.printInformation()
+        self.cuenta.printInformacion()
         return self
 
         
