@@ -32,7 +32,7 @@ class Usuario:
 
 
     def método_ejemplo(self):
-        self.cuenta.depósito(100)		# llamamos a los métodos de instancia de CuentaBancaria
+        self.cuenta.depósito(100)		
         print(self.cuenta.balance)
 
 
