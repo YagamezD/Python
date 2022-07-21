@@ -16,7 +16,7 @@ print("-------")
 
 #BONUS SENSEI
 oscar= Usuario("Oscar")
-oscar.cuentaAhorros.deposito(100).deposito(200) .generar_interes()
+oscar.cuentaAhorros.deposito(10).deposito(250) .generar_interes()
 print("-------")
 
 oscar.cuentaCorriente.deposito(500).retiro(200).generar_interes().mostrar_info_cuenta()
