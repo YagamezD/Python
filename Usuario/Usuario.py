@@ -13,7 +13,7 @@ class Usuario:
         return self
 
     def show_balance(self):
-        print(f"User: {self.name}, Balance: ${self.balance_account}.")
+        print(f"Usuario: {self.name}, Balance: ${self.balance_account}")
         return self
 
     def transfer_money(self, other_user, amount):
