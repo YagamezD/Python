@@ -9,8 +9,8 @@ class CuentaBancaria:
 
     def deposito(self, amount):
         self.balance += amount
-        print(f"You're new balance is {self.balance}")
-        print(f"Tu Monto Es De {amount}")
+        print(f"Tu nuevo balance es: {self.balance}")
+        print(f"Tu monto es de: {amount}")
         return self
 
     def retiro(self, amount):
@@ -21,11 +21,11 @@ class CuentaBancaria:
         if self.balance >= amount:
             self.balance -= amount
             print(f"Retiraste: {amount}")
-            print(f"Tu nuevo balance es {self.balance}")
+            print(f"Tu nuevo balance es: {self.balance}")
         else:
-            print("Fondos insuficiente: Te cargaremos un fee de $5")
+            print("Fondos insuficientes: cobrando una tarifa de $5")
             self.balance -= (amount + 5)
-            print(f"Tu nuevo balance es {self.balance}")
+            print(f"Tu nuevo balance es: {self.balance}")
         return self
 
     def mostrar_info_cuenta(self):
@@ -35,18 +35,17 @@ class CuentaBancaria:
     def generar_interes(self):
         if self.balance > 0:
             self.balance += self.balance * self.tasa_interes
-            print(f"Tu nuevo monto con Intres es {self.balance}")
+            print(f"Tu nuevo monto con intereses es: {self.balance}")
         else:
-            print("No Tienes Saldo Suficientes:(")
+            print("Sin saldo")
         return self
 
     def printInformation(self):
-        print(
-            f"Account interest: {self.tasa_interes}. Account balance: {self.balance}.")
+        print(f"Intereses: {self.tasa_interes} y  Balance: {self.balance}")
         return self
 
     @classmethod
     def printAllAccountsInfo(cls): 
-        print(f"This is the information for all the accounts")
+        print(f"Esta es la informacion de todas las cuentas")
         for x in cls.cuentasTotales:
             x.printInformation()
