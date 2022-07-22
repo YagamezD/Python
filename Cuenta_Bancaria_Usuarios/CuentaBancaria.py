@@ -2,7 +2,7 @@ class CuentaBancaria:
 
     cuentasB = []
 
-    def __init__(self, tasa_interes=0.01, balance=0):
+    def __init__(self,balance=0, tasa_interes=0.01 ):
         self.tasa_interes = tasa_interes
         self.balance = balance
         CuentaBancaria.cuentasB.append(self)
@@ -22,7 +22,7 @@ class CuentaBancaria:
         return self
 
     def mostrar_info_cuenta(self):
-        print(f"Balance: {self.balance}")
+        print(f" Balance: {self.balance}")
         return self
 
     def generar_interes(self):

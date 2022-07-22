@@ -1,3 +1,4 @@
+from unicodedata import name
 from CuentaBancaria import CuentaBancaria
 class Usuario:
 
@@ -15,12 +16,15 @@ class Usuario:
         return self
         
     def mostrar_balance(self):
-        print(f"Usuario: {self.name}, Balance: $ {self.cuenta.balance}")
+        print(f"Usuario: {self.name}, Balance: {self.cuenta.balance}")
         return self
     
-    def generar_interes(self):
-        self.cuenta.generar_interes()
-        return self
+    def transferir(self,other_user, amount) :
+        self.cuenta.balance -= amount
+        other_user.cuenta.balance += amount
+        self.mostrar_balance()
+        other_user.mostrar_balance()
+        return self  
 
 
 
