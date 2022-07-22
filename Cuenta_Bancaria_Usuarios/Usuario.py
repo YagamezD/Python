@@ -3,7 +3,7 @@ class Usuario:
 
     def __init__(self, name):
         self.name = name
-        self.cuenta = CuentaBancaria(balance=0, tasa_interes=0.02)
+        self.cuenta = CuentaBancaria(balance=0, tasa_interes=0.01)
 
     def hacer_deposito(self, amount):
         self.cuenta.deposito(amount)
@@ -22,7 +22,9 @@ class Usuario:
         self.cuenta.generar_interes()
         return self
 
-    
+
+
+
 
 
 

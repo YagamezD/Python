@@ -1,14 +1,11 @@
-
 class CuentaBancaria:
 
     cuentasB = []
 
-    def __init__(self, name, tasa_interes=0.01, balance=0):
-        self.name = name
+    def __init__(self, tasa_interes=0.01, balance=0):
         self.tasa_interes = tasa_interes
         self.balance = balance
         CuentaBancaria.cuentasB.append(self)
-
 
     def deposito(self, amount):
         self.balance += amount
@@ -25,13 +22,13 @@ class CuentaBancaria:
         return self
 
     def mostrar_info_cuenta(self):
-        print(f"Usuario: {self.name}, Balance: {self.balance}")
+        print(f"Balance: {self.balance}")
         return self
 
     def generar_interes(self):
         if self.balance >= 0:
-            self.tasa_interes = self.balance * self.tasa_interes
-            self.balance = self.balance + self.tasa_interes
+            self.tasa_interes += self.balance * self.tasa_interes
+            self.balance += self.balance + self.tasa_interes
             print(f"Tu nuevo monto con intereses es: {self.balance}")
         return self
 
@@ -40,6 +37,3 @@ class CuentaBancaria:
         print("Esta es la informacion de todas las cuentas")
         for cuentas in cls.cuentasB:
             cuentas.mostrar_info_cuenta()
-
-
-
