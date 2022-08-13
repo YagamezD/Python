@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta Dojo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+    <form action="/process" method="POST" class=" bg-dark text-primary p-5 rounded col-6 mx-auto" >
+        <div class=" container p-3 mb-2 bg-dark text-white" >
+            <div class="form-group ">
+            <label for="first_name">Nombre: </label>
+            <input type="text"  name="first_name" class="form-control" placeholder="Nombre">
+        </div>
+    
+        <div class="form-group ">
+            <label for="last_name" >Apellido: </label>
+            <input type="text"  name="last_name" class="form-control" placeholder="Apellidos">
+        </div>
+    
+        <div class="form-group ">
+            <label for="email"> E-mail: </label>
+            <input type="text" name="email" class="form-control" placeholder="Ingresa email">
+        </div>
+    
+        <div class="form-control">
+            <label for="dojos" >Dojo: </label>
+            <select  name="dojos" class="form-control">
+                <option value="Colombia">Colombia</option>
+                <option value="Peru">Peru</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Mexico">Mexico</option>
+            </select>
+        </div>
+    
+        <div class="form-control">
+            <label for="lenguajes" >Lenguajes Favoritos </label>
+            <select name="lenguajes" class="form-control">
+                <option value="Java" >Java</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Python">Python</option>
+                <option value="R">R</option>
+            </select>
+        </div>
+
+        <div class="form-check">
+            <p><label for="juegos"> Selecciona tus intereses:<label>
+            <input type="checkbox"  value="Peliculas" name="juegos"  {% if juegos == Peliculas %} checked {% endif %}> Películas<br>
+            <input type="checkbox" value="Videojuegos" name="juegos" {% if juegos == Videojuegos %} checked {% endif %}> Videojuegos
+        </p>
+        </div>
+    
+        <div class="form-control">
+            <label for="comments">Comentarios</label>
+            <textarea class="form-control"  name="comments"></textarea>
+        </div>
+        <input type="submit" value="Enviar" class="btn btn-success">
+
+    </div>
+    </form>
+</body>
+</html>
